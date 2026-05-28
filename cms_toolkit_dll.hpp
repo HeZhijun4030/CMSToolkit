@@ -7,7 +7,7 @@
 #ifndef CMS_UTILS_DLL_HPP
 #define CMS_UTILS_DLL_HPP
 
-#define CMS_Ver "0.0.1"
+#define CMS_Ver "0.0.5"
 
 #ifdef _WIN32
 #ifdef CMS_EXPORTS

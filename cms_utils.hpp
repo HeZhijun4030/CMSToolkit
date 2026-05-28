@@ -6,7 +6,7 @@
  */
 #ifndef CMS_UTILS_HPP
 #define CMS_UTILS_HPP
-
+#define CMS_Ver "0.0.5"
 #include <iostream>
 #include <limits>
 #include <string>
