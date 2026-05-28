@@ -2,11 +2,11 @@
 * @file   cms_utils.hpp
  * @brief  CMS Cross-platform C++ utility toolkit Header only
  * @author HeZhijun4030
- * @date   2026-05-03
+ * @date   2026-05-28
  */
 #ifndef CMS_UTILS_HPP
 #define CMS_UTILS_HPP
-#define CMS_Ver "0.0.5"
+#define CMS_Ver "1.0.5"
 #include <iostream>
 #include <limits>
 #include <string>

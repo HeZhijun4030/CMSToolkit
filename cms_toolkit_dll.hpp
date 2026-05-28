@@ -1,13 +1,13 @@
 /**
- * @file   cms_toolkit_dll.cpp
+ * @file   cms_toolkit_dll.hpp
  * @brief  CMS Cross-platform C++ utility toolkit dll head
  * @author HeZhijun4030
- * @date   2026-05-03
+ * @date   2026-05-28
  */
 #ifndef CMS_UTILS_DLL_HPP
 #define CMS_UTILS_DLL_HPP
 
-#define CMS_Ver "0.0.5"
+#define CMS_Ver "1.0.5"
 
 #ifdef _WIN32
 #ifdef CMS_EXPORTS
