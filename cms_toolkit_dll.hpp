@@ -29,41 +29,6 @@ namespace cms
     CMS_API void Init();
 
 
-    namespace tween
-    {
-        class CMS_API BaseTween
-        {
-        public:
-            enum Eas{In,Out};
-            // TODO(Hzj) Ease in/out more curve
-            enum Curve {Linear,QuadIn,Qurd};
-
-            explicit BaseTween(const float& st = 0,const float& fi = 0,const float& du = 0,const Curve& cu=Curve::Linear);
-
-            //void start(const float& st,const float& fi,const float& du,const Curve& cu);
-            void Start();
-            float Update();
-            void BindToTarget(float& Target);
-            void ApplyToUpdate();
-            bool GetIsRunning() const;
-        private:
-            static float GetCurrentTimeMs();
-            float ApplyCurve(const float& t) const;
-            float StartValue;
-            float FinalValue;
-            float Duration;
-            Curve CurCurve;
-            bool IsRunning;
-
-            float StartTime;
-
-            float* BindTarget;
-
-            //TODO 熔断
-            bool Finished;
-        };
-
-    }
 
 
     namespace terminal
