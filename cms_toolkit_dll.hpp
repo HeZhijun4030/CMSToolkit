@@ -28,9 +28,9 @@ namespace cms
 {
     CMS_API void Init();
 
-        namespace structs::geometry
-        {
-        /**
+    namespace structs::geometry
+    {
+/**
  * @brief 2D vector structure for basic geometric operations
  *
  * This structure provides a complete set of vector arithmetic operations,
