@@ -8,7 +8,7 @@ add_library(${PROJECT_NAME} SHARED
         cms_toolkit_dll.hpp
         cms_toolkit_dll.cpp
 )
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/dist)
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/CMSToolkit)
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
