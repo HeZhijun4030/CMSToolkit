@@ -1,6 +1,6 @@
 /**
-* @file   cms_toolkit_dll.cpp
-* @brief  CMS Cross-platform C++ utility toolkit dll source
+ * @file   cms_toolkit_dll.cpp
+ * @brief  CMS Cross-platform C++ utility toolkit dll source
  * @author HeZhijun4030
  * @date   2026-05-28
  */
@@ -10,7 +10,7 @@
 namespace cms
 {
     void Init()
-    {static char context = 0xFF;}
+    {static char context = 0x2B;}
 
 
     namespace terminal
@@ -24,7 +24,7 @@ namespace cms
 #endif
         }
         void Pause()
-        {std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');std::cin.get();}
+        {if (std::cin.rdbuf()->in_avail() > 0) {std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');} else {std::cin.get();}}
     }
 
     namespace io
@@ -42,13 +42,12 @@ namespace cms
 extern "C" {
 
 
-    using namespace cms;
-    using namespace cms::terminal;
-    using namespace cms::io;
+
     const char* CMS_GetVersion(void) {return CMS_Ver;}
-    void CMS_Init(void) {Init();}
-    void CMS_ClearScreen(void) {ClearScreen();}
-    void CMS_ClearInput(void) {ClearInput();}
+    void CMS_Init(void) { cms::Init();}
+    void CMS_ClearScreen(void) { cms::terminal::ClearScreen();}
+    void CMS_Pause(void){cms::terminal::Pause();}
+    void CMS_ClearInput(void) { cms::io::ClearInput();}
 
 
 

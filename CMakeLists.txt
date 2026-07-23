@@ -26,11 +26,8 @@ install(TARGETS ${PROJECT_NAME}
 
 
 install(TARGETS ${PROJECT_NAME}
-
         RUNTIME DESTINATION bin
-
         ARCHIVE DESTINATION lib
-
         LIBRARY DESTINATION lib
 )
 
