@@ -6,15 +6,53 @@
  */
 #ifndef CMS_UTILS_HPP
 #define CMS_UTILS_HPP
-#define CMS_Ver "1.1.0"
+#define CMS_Ver "1.2.0"
 #include <iostream>
 #include <limits>
 #include <string>
+#include <vector>
 
 namespace cms
 {
     inline void Init()
-    {static char context = 0x2B;}
+    {static char cms_context = 0x2B;}
+
+    namespace algorithm::Sort
+    {
+        template<typename T>
+         void Merge(std::vector<T>& arr, int left, int mid, int right) {
+            int lenl = mid - left + 1;  int lenr = right - mid;
+            std::vector<T> tmpl(lenl), tmpr(lenr);
+            for (int i = 0; i < lenl; ++i) tmpl[i] = arr[left + i];
+            for (int j = 0; j < lenr; ++j) tmpr[j] = arr[mid + 1 + j];
+
+            int i = 0, j = 0, k = left;
+            while (i < lenl && j < lenr) {
+                if (tmpl[i] <= tmpr[j]) {arr[k] = std::move(tmpl[i]);++k;++i;} else {arr[k] = std::move(tmpr[j]);++k;++j;}
+            }
+            while (i < lenl) arr[k++] =std::move(tmpl[i++]);while (j < lenr) arr[k++] = std::move(tmpr[j++]);
+        }
+        template<typename T>
+        void MergeSort(std::vector<T>& arr, int left, int right) {
+            if (left >= right) return;
+            int mid = left + (right - left) / 2;
+            MergeSort(arr, left, mid);
+            MergeSort(arr, mid + 1, right);
+            Merge(arr, left, mid, right);
+        }
+        template<typename T>
+        void MergeSort(std::vector<T>& arr) {
+            if (arr.empty()) return;
+            MergeSort(arr,0,arr.size()-1);
+        }
+
+
+
+    }
+
+
+
+
     namespace structs::geometry
     {
 /**

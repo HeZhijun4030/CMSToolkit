@@ -21,7 +21,7 @@
 namespace cms
 {
     void Init()
-    {static char context = 0x2B;}
+    {static char cms_context = 0x2B;}
 
 
     namespace terminal
